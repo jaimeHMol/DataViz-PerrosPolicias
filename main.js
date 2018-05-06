@@ -1,18 +1,13 @@
 
 var main = function(){
-
-
-    
-
     // Se agrega el evento submit
     // El $ sirve para acceder al contenido que almacena el objeto
     $('form').submit(function(event){
         console.log('hizo click');
     });
-
-    
-
 }
+
+
 $(document).ready(main);
 
 
