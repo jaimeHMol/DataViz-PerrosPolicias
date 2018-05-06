@@ -11,6 +11,7 @@ var main = function(){
 $(document).ready(main);
 
 
+
 $('#var1').slider({
 	formatter: function(value) {
 		return 'Valor actual: ' + value;
