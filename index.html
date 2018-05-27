@@ -17,10 +17,6 @@
 		<!-- Llamado a hoja de estilo de la plantilla dashboard -->
         <link href="dashboard.css" rel="stylesheet">
 
-        <!-- Llamado a hoja de estilo del slider-->
-        <link rel="stylesheet" type="text/css" href="bootstrap-slider.css" media="all"/>
-        <!-- Llamado al js del slider -->
-        <script src="bootstrap-slider.js"></script>
     </head>
 
     <!-- Cuerpo -->
@@ -53,162 +49,28 @@
         <!-- Main     -->
 		<div class="container-fluid">
 			<div class="row">
-				<!-- Panel lateral de selección de características-->
-				<div class="col-sm-4 col-md-3 sidebar">
-					<h2>Características</h2>
-					<!-- Slider para variable: actividad -->
-					<ul class="nav nav-sidebar">								
-						<li class="active">
-							<p>Actividad:</p>                       
-							<input id="var1" data-slider-id='ex1Slider'  data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="0"/>
-							<script src="main.js"></script>
-						</li>
-					</ul>
-					
-					<!-- Slider para variable: independencia -->
-					<ul class="nav nav-sidebar">								
-						<li class="active">						
-							<p>Independencia:</p>      
-							<input id="var2" data-slider-id='ex1Slider'  data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="0"/>
-							<script src="main.js"></script>
-						</li>
-					</ul>
-					
-					<!-- Slider para variable: Concentración -->
-					<ul class="nav nav-sidebar">								
-						<li class="active">						
-							<p>Concentración:</p>      
-							<input id="var3" data-slider-id='ex1Slider'  data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="0"/>
-							<script src="main.js"></script>                        
-						</li>
-					</ul>
-					
-					<!-- Slider para variable: amistad con humanos -->
-					<ul class="nav nav-sidebar">								
-						<li class="active">						
-							<p>Amistad con humanos:</p>      
-							<input id="var4" data-slider-id='ex1Slider'  data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="0"/>
-							<script src="main.js"></script>
-						</li>
-					</ul>
-					
-					<!-- Slider para variable: tolerancia a otros perros -->
-					<ul class="nav nav-sidebar">								
-						<li class="active">						
-							<p>Tolerancia a otros perros:</p>      
-							<input id="var5" data-slider-id='ex1Slider'  data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="0"/>
-							<script src="main.js"></script>                                                
-						</li>
-					</ul>
 
-					<!-- Slider para variable: audacia -->
-					<ul class="nav nav-sidebar">								
-						<li class="active">						
-							<p>Audacia:</p>      
-							<input id="var6" data-slider-id='ex1Slider'  data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="0"/>
-							<script src="main.js"></script>                                                
-						</li>
-					</ul>	
-					
-					<!-- Slider para variable: interes en el dummy -->
-					<ul class="nav nav-sidebar">								
-						<li class="active">						
-							<p>Interes en el "dummy":</p>      
-							<input id="var7" data-slider-id='ex1Slider'  data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="0"/>
-							<script src="main.js"></script>                                                
-						</li>
-					</ul>
-					
-					<!-- Radio buttons para elegir el genero -->
-					<ul class="nav nav-sidebar">								
-						<li class="active">					
-							<p>Genero:</p>
-							<label class="radio-inline">
-								<input type="radio" name="radioGenero" id="radioGeneroMacho" value="option1" checked> 
-								Macho
-							</label>
-
-							<label class="radio-inline">
-								<input type="radio"  name="radioGenero" id="radioGeneroHembra" value="option2">
-								Hembra
-							</label>
-						</li>
-					</ul>
-	
-					<!-- Lista desplegable para elegir el gen SNP4 -->
-					<ul class="nav nav-sidebar">								
-						<li class="active">	
-							
-							
-						<div class="row">
-							<div class="col" style="float:left;">
-							<p>Gen SNP4:</p>      
-							<div class="dropdown">
-								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-															id="dropdownSNP4" aria-haspopup="true" aria-expanded="true">
-									GTC/GTC <span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu" aria-labelledby="dropdownSNP4">
-									<li><a href="#">GTC/GTC</a></li>
-									<li><a href="#">GTC/GTT</a></li>
-									<li><a href="#">GTT/GTT</a></li>
-								</ul>
-							</div>    
-							</div>
-							
-							<div class="col">
-							<!-- Lista desplegable para elegir el gen SNP5 -->	
-							<p>Gen SNP5:</p>      
-							<div class="dropdown">
-								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-															id="dropdownSNP5" aria-haspopup="true" aria-expanded="true">
-									AGC/AGT <span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu" aria-labelledby="dropdownSNP5">
-									<li><a href="#">AGC/AGT</a></li>
-									<li><a href="#">AGT/AGT</a></li>
-								</ul>
-							</div> 
-							</div>
-
-						</div>
-							
-
-
-						</li>
-					</ul>
-
-					<!-- Lista desplegable para elegir el gen SNP5 -->
-					<!-- <ul class="nav nav-sidebar">								
-						<li class="active">						
-							<p>Gen SNP5:</p>      
-							<div class="dropdown">
-								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-															id="dropdownSNP5" aria-haspopup="true" aria-expanded="true">
-									AGC/AGT <span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu" aria-labelledby="dropdownSNP5">
-									<li><a href="#">AGC/AGT</a></li>
-									<li><a href="#">AGT/AGT</a></li>
-								</ul>
-							</div>                                                    
-						</li>
-					</ul> -->
-
-					<!-- Para llamar a la ejecución del modelo y su correspondiente visualización -->
-					<ul class="nav nav-sidebar">								
-						<li class="active">	
-							<a>Ejecutar</a>
-							<!--<button type="button" class="btn btn-default">Ejecutar</button>-->
-						</li>
-					</ul>
-				</div>
 				
-				<!-- Panel de visualización del resultado del modelo -->
-				<div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main">  
-					<h1 class="page-header">Resultado del modelo</h1>
-					<img src="exampleImage.jpg" width ="80%" height="50%" alt="Imagen de ejemplo"/>
+				<h1 class="page-header">Modelo predictivo del resultado del entrenamiento canino</h1>
+
+				<div>
+						¿Que necesitan para convertirse en servidores públicos? <br>					
+						Durante los años 2002 a 2015, cientificos japoneses han evaluado distintas caracteristicas de perros jovenes que ingresaron a los programas de entrenamiento de "perros detectores" de las fuerzas de seguridad. Se correlacionaron aspectos generales de los perros candidatos con su capacidad de calificar al final del entrenamiento. Las variables involucradas involucran tanto aspectos de comportamiento como aspectos mas intrinsecos como sexo y presencia de genes especificos. ¿Cuales son las variables mas importantes? ¿Cuanto impacta cada una de ellas en la predisposicion para terminar exitosamente el programa de entrenamiento?<br><br><br>
+						Fuente: Konno et al. (2018) Effect of canine oxytocin receptor gene polymorphism on the successful training of drug detection dogs.</p>
 				</div>
+
+				<h1 class="page-header"></h1>
+				<!-- Llamado a D3-->
+				<script src="https://d3js.org/d3.v5.min.js"></script>
+
+				<!-- Llamado al js (java script) -->
+				<script src="main.js"></script>
+				<!-- <script src="barras locas.js"></script> -->
+
+				<div class="hideshow" id="btnDiv" style="margin-left:1010px; margin-top:68px;">
+					 <button type="button" class="btn btn-primary btn-lg" id="runModel">Ejecutar</button>
+				</div>
+
 
 			</div>
 		</div>
