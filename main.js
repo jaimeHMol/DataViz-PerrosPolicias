@@ -10,7 +10,7 @@ var canvas = d3.select("body").select(".row")
 				.style("float", "left");
 
 // Defino gradiente graduado en color para barra.
-var defs=canvas.append("defs");				
+var defs=canvas.append("defs");
 var gradient=defs.append("linearGradient")
 	.attr("id","gradient")
 	.attr("y1","10%")
@@ -29,6 +29,45 @@ gradient.append("stop")
 	.attr("stop-opacity", 1);
 
 
+	/* Initialize tooltip
+		Con todas las descripciones de las variables analizadas*/
+	var tip = d3.tip()
+  						.attr('class', 'd3-tip')
+  						.offset([-10, 0])
+  						.html(function(d) {
+								if (d == "0"){
+									return "Parámetro cualitativo que mide <p> que tan activo es el perro <p> (5 es mucho y 1 muy poco)";
+								}
+								if (d == "1"){
+									return "Parámetro cualitativo que mide <p> que tan independiente es el perro <p> (5 es mucho y 1 muy poco)";
+								}
+								if (d == "2"){
+									return "Parámetro cualitativo que mide <p> que tanta concentración muestra el perro <p> (5 es mucho y 1 muy poco)";
+								}
+								if (d == "3"){
+									return "Parámetro cualitativo que mide <p> que tan amistoso es el perro <p> (5 es mucho y 1 muy poco)";
+								}
+								if (d == "4"){
+									return "Parámetro cualitativo que mide <p> que tan tolerante es el perro <p> (5 es mucho y 1 muy poco)";
+								}
+								if (d == "5"){
+									return "Parámetro cualitativo que mide <p> que tanta audacia muestra el perro <p> (5 es mucho y 1 muy poco)";
+								}
+								if (d == "6"){
+									return "Parámetro cualitativo que mide <p> que tanto interés muestra el perro <p> (5 es mucho y 1 muy poco)";
+								}
+								if (d == "7"){
+									return "Sexo al que pertenece el perro";
+								}
+								if (d == "8"){
+									return "Sección SNP4 del gen OXTR <p> donde G: Guanina, T: Timina, C: Citosina";
+								}
+								if (d == "9"){
+									return "Sección SNP5 del gen OXTR <p> donde A: Adenina, G: Guanina, T: Timina, C: Citosina";
+								}
+  						});
+	/* Invoke the tip in the context of your visualization */
+	canvas.call(tip);
 
 // Títulos de las variables a ingresar
 textTitle = canvas.append("text")
@@ -38,10 +77,10 @@ textTitle = canvas.append("text")
 	.attr("font-size","16px")
 	.attr("fill", "black")
 	.attr("font-weight", "bold")
-	.attr("class", "tooltip")
 	.text("Actividad")
-	.append("span").attr("class", "tooltiptext")
-		       .text("Parámetro cualitativo que mide que tan activo es el perro (5 es mucho y 1 muy poco)");
+	.data("0")
+	.on('mouseover', tip.show)
+	.on('mouseout', tip.hide);
 textTitle = canvas.append("text")
 	.attr("x", margen.x + 122)
 	.attr("y", margen.y + 20)
@@ -49,8 +88,10 @@ textTitle = canvas.append("text")
 	.attr("font-size","16px")
 	.attr("fill", "black")
 	.attr("font-weight", "bold")
-	.attr("class", "tooltip")
-	.text("Independ.");
+	.text("Independ.")
+	.data("1")
+	.on('mouseover', tip.show)
+	.on('mouseout', tip.hide);
 textTitle = canvas.append("text")
 	.attr("x", margen.x + 209)
 	.attr("y", margen.y + 20)
@@ -58,8 +99,10 @@ textTitle = canvas.append("text")
 	.attr("font-size","16px")
 	.attr("fill", "black")
 	.attr("font-weight", "bold")
-	.attr("class", "tooltip")
-	.text("Concent.");
+	.text("Concent.")
+	.data("2")
+	.on('mouseover', tip.show)
+	.on('mouseout', tip.hide);
 textTitle = canvas.append("text")
 	.attr("x", margen.x + 290)
 	.attr("y", margen.y + 20)
@@ -67,8 +110,10 @@ textTitle = canvas.append("text")
 	.attr("font-size","16px")
 	.attr("fill", "black")
 	.attr("font-weight", "bold")
-	.attr("class", "tooltip")
-	.text("Amistad");
+	.text("Amistad")
+	.data("3")
+	.on('mouseover', tip.show)
+	.on('mouseout', tip.hide);
 textTitle = canvas.append("text")
 	.attr("x", margen.x + 360)
 	.attr("y", margen.y + 20)
@@ -76,8 +121,10 @@ textTitle = canvas.append("text")
 	.attr("font-size","16px")
 	.attr("fill", "black")
 	.attr("font-weight", "bold")
-	.attr("class", "tooltip")
-	.text("Tolerancia");
+	.text("Tolerancia")
+	.data("4")
+	.on('mouseover', tip.show)
+	.on('mouseout', tip.hide);
 textTitle = canvas.append("text")
 	.attr("x", margen.x + 452)
 	.attr("y", margen.y + 20)
@@ -85,8 +132,10 @@ textTitle = canvas.append("text")
 	.attr("font-size","16px")
 	.attr("fill", "black")
 	.attr("font-weight", "bold")
-	.attr("class", "tooltip")
-	.text("Audacia");
+	.text("Audacia")
+	.data("5")
+	.on('mouseover', tip.show)
+	.on('mouseout', tip.hide);
 textTitle = canvas.append("text")
 	.attr("x", margen.x + 535)
 	.attr("y", margen.y + 20)
@@ -94,8 +143,10 @@ textTitle = canvas.append("text")
 	.attr("font-size","16px")
 	.attr("fill", "black")
 	.attr("font-weight", "bold")
-	.attr("class", "tooltip")
-	.text("Interés");
+	.text("Interés")
+	.data("6")
+	.on('mouseover', tip.show)
+	.on('mouseout', tip.hide);
 textTitle = canvas.append("text")
 	.attr("x", margen.x + 610)
 	.attr("y", margen.y + 20)
@@ -103,8 +154,10 @@ textTitle = canvas.append("text")
 	.attr("font-size","16px")
 	.attr("fill", "black")
 	.attr("font-weight", "bold")
-	.attr("class", "tooltip")
-	.text("Género");
+	.text("Género")
+	.data("7")
+	.on('mouseover', tip.show)
+	.on('mouseout', tip.hide);
 textTitle = canvas.append("text")
 	.attr("x", margen.x + 730)
 	.attr("y", margen.y + 20)
@@ -112,8 +165,10 @@ textTitle = canvas.append("text")
 	.attr("font-size","16px")
 	.attr("fill", "black")
 	.attr("font-weight", "bold")
-	.attr("class", "tooltip")
-	.text("SNP4");
+	.text("SNP4")
+	.data("8")
+	.on('mouseover', tip.show)
+	.on('mouseout', tip.hide);
 textTitle = canvas.append("text")
 	.attr("x", margen.x + 855)
 	.attr("y", margen.y + 20)
@@ -121,8 +176,10 @@ textTitle = canvas.append("text")
 	.attr("font-size","16px")
 	.attr("fill", "black")
 	.attr("font-weight", "bold")
-	.attr("class", "tooltip")
-	.text("SNP5");
+	.text("SNP5")
+	.data("9")
+	.on('mouseover', tip.show)
+	.on('mouseout', tip.hide);
 
 
 // Selectores variables cualitativas
@@ -161,7 +218,7 @@ for (i=1; i<6; i++) {
 					d3.select(this)
 						.attr("fill", "red");
 
-					// Limpia el resto de circulos					
+					// Limpia el resto de circulos
 					nivelSel = d3.select(this).attr("id");
 					col = nivelSel.substring(2,3);
 					fil = nivelSel.substring(3,4);
@@ -199,7 +256,7 @@ var textLabels = canvas.append("text")
 	.attr("font-family", "sans-serif")
 	.attr("font-size","18px")
 	.attr("fill", "black")
-	.text("Macho");	
+	.text("Macho");
 
 x = generoPosicion.x + 80;
 for (j=1; j<3; j++) {
@@ -216,11 +273,11 @@ for (j=1; j<3; j++) {
 				d3.select(this)
 					.attr("fill", "red");
 
-				// Limpia el resto de circulos	
+				// Limpia el resto de circulos
 				nivelSel = d3.select(this).attr("id");
 				fil = nivelSel.substring(2,3);
 				d3.select("#v8"+String(parseInt(fil)+1)).attr("fill","white");
-				d3.select("#v8"+String(parseInt(fil)-1)).attr("fill","white");		
+				d3.select("#v8"+String(parseInt(fil)-1)).attr("fill","white");
 
 				ejecutar();
 			});
@@ -248,7 +305,7 @@ var textLabels = canvas.append("text")
 	.attr("font-size","18px")
 	.attr("fill", "black")
 	.text("GTC/GTT") + 30
-	
+
 x = snp4Posicion.x
 y = (3 * snp4Posicion.y) + margen.y + 30;
 var textLabels = canvas.append("text")
@@ -257,7 +314,7 @@ var textLabels = canvas.append("text")
 	.attr("font-family", "sans-serif")
 	.attr("font-size","18px")
 	.attr("fill", "black")
-	.text("GTT/GTT");		
+	.text("GTT/GTT");
 
 
 x = (1 * snp4Posicion.x) + 95;
@@ -275,7 +332,7 @@ for (j=1; j<4; j++) {
 				d3.select(this)
 					.attr("fill", "red");
 
-				// Limpia el resto de circulos	
+				// Limpia el resto de circulos
 				nivelSel = d3.select(this).attr("id");
 				fil = nivelSel.substring(2,3);
 				d3.select("#v9"+String(parseInt(fil)+1)).attr("fill","white");
@@ -309,7 +366,7 @@ var textLabels = canvas.append("text")
 	.attr("font-family", "sans-serif")
 	.attr("font-size","18px")
 	.attr("fill", "black")
-	.text("AGT/AGT");	
+	.text("AGT/AGT");
 
 
 x = snp5Posicion.x + 95;
@@ -327,11 +384,11 @@ for (j=1; j<3; j++) {
 				d3.select(this)
 					.attr("fill", "red");
 
-				// Limpia el resto de circulos	
+				// Limpia el resto de circulos
 				nivelSel = d3.select(this).attr("id");
-				fil = nivelSel.substring(3,4);	
+				fil = nivelSel.substring(3,4);
 				d3.select("#v10"+String(parseInt(fil)+1)).attr("fill","white");
-				d3.select("#v10"+String(parseInt(fil)-1)).attr("fill","white");		
+				d3.select("#v10"+String(parseInt(fil)-1)).attr("fill","white");
 
 				ejecutar();
 			});
@@ -345,23 +402,23 @@ for (j=1; j<3; j++) {
 $(document).ready(function(){
 		$('#runModel').click(function(){
 			primeraEjecucion = 1;
-			
+
 			// Scroll al Canvas para que aparezca completo en la página
 			var scrollToId = $(this).data("data-scroll");
                         var scrollToElement = document.getElementById(scrollToId);
 			if($("#mainCanvas").length > 0){
         			$('html, body').animate({ scrollTop: $("#mainCanvas").offset().top}, 1000);
 			}
-			
-			
-			
-			ejecutar();	
+
+
+
+			ejecutar();
 	});
 });
 
 function ejecutar(){
 	if (primeraEjecucion == 1){
-			
+
 		// Limpia el área de la gráfica
 		d3.select("body")
 			.select(".row")
@@ -372,7 +429,7 @@ function ejecutar(){
 			.select("svg")
 			.selectAll("line").remove();
 
-		// Inicializa variables			
+		// Inicializa variables
 		valActivity = 0;
 		for(i=1; i<6; i++){
 			valAct = d3.select("#vc1" + String(i)).attr("fill");
@@ -448,7 +505,7 @@ function ejecutar(){
 		GRÁFICA DE CASCADA
 	   *****************************************************************/
 		var origen = {x: 0, y: 230};
-		
+
 		// Barra agregadas
 		barwidth = 60;
 		bargap = 78;
@@ -465,9 +522,9 @@ function ejecutar(){
 		variables.sexo = valGender;
 		variables.snp4 = valSNP4;
 		variables.snp5 = valSNP5;
-		
+
 		scoreInicial = 8.8287470;
-		
+
 		resultados = {};
 		resultados.actividad = (variables.actividad * -0.7682244);
 		resultados.independencia = (variables.independencia * -0.1537098);
@@ -479,42 +536,42 @@ function ejecutar(){
 		resultados.sexo = (variables.sexo * -0.8440419);
 		resultados.snp4 = (variables.snp4 * 0.5975664);
 		resultados.snp5 = (variables.snp5 * 1.5635239);
-		
-		scoreFinal = scoreInicial + 
-			(resultados.actividad ) + 
-			(resultados.independencia ) + 
+
+		scoreFinal = scoreInicial +
+			(resultados.actividad ) +
+			(resultados.independencia ) +
 			(resultados.concentracion ) +
-			(resultados.amistad ) + 
+			(resultados.amistad ) +
 			(resultados.tolerancia ) +
 			(resultados.audacia ) +
 			(resultados.interes ) +
-			(resultados.sexo ) + 
-			(resultados.snp4 ) + 
+			(resultados.sexo ) +
+			(resultados.snp4 ) +
 			(resultados.snp5 );
-		
+
 		//resultados del modelo. Coefic x parametro elegido
-		long = [resultados.actividad, 
+		long = [resultados.actividad,
 			resultados.independencia,
 			resultados.concentracion,
-			resultados.amistad, 
-			resultados.tolerancia, 
-			resultados.audacia, 
-			resultados.interes, 
-			resultados.sexo, 
-			resultados.snp4, 
+			resultados.amistad,
+			resultados.tolerancia,
+			resultados.audacia,
+			resultados.interes,
+			resultados.sexo,
+			resultados.snp4,
 			resultados.snp5];
-		
+
 		//constante de la regresion logistica
 		// acumulado = scoreInicial + origen.y+250;
 		function escalado(valorX, valorMaximoPx){
 			valorEscalado =  (  ((valorX/15) + 0.0358) * valorMaximoPx   );
 			console.log("escalado: " + String(valorEscalado));
-			return valorEscalado;	
+			return valorEscalado;
 		}
 		scoreFinalEstandar = 1 -    ( (scoreFinal + 6) / 15 )
 		//factorescala = scoreFinalEstandar * 400;
 		acumulado = origen.y +    ( ((scoreInicial / 15) + 0.0358) * 400    );
-		
+
 		rect = canvas.append("line")
 			.attr("x1",  origen.x + bargap - 65)
 			.attr("y1", acumulado)
@@ -523,7 +580,7 @@ function ejecutar(){
 			.attr("class", "origin")
 			.attr("stroke", "black")
 			.attr("stroke-width", "3");
-		
+
 		// Punto inicial
 		rect = canvas.append("text")
 			.attr("x",  origen.x +bargap - 75)
@@ -532,12 +589,12 @@ function ejecutar(){
 			.attr("font-size", "12px")
 			.attr("fill", "black")
 			.text( (1-  ((scoreInicial/15) + 0.0358)  ).toFixed(3)); // Para redondear a 1 decimal
-		
-		
+
+
 		 componentes = [];
 		 componentes2 = [];
 		 for( b=1; b<11; b++){
-			// Ajustes de espaciado personalizado 
+			// Ajustes de espaciado personalizado
 			if (b==1){
 				origen.x = -10;
 				ajuste = 0;
@@ -559,7 +616,7 @@ function ejecutar(){
 			}
 			if (b==10){
 				origen.x = 85;
-			}		
+			}
 
 			 rectstart = Math.min(acumulado, acumulado + escalado(long[b-1], 400) )
 			 objeto={"x":origen.x + (bargap * b), "width":barwidth, "fill":"grey", "y":rectstart, "height": Math.abs(escalado(long[b-1], 400)) }
@@ -569,18 +626,18 @@ function ejecutar(){
 			 componentes.push(objeto);
 			 componentes2.push(linea);
 		 };
-		
+
 		barras = canvas.selectAll("rect")
 			.data(componentes)
 			.enter()
 			.append("rect");
-		
+
 		lineas = canvas.selectAll("conector")
 			.data(componentes2)
 			.enter()
 			.append("line");
 
-		
+
 		// Agrega barra de resultado
 		rectMarco=canvas.append("rect")
 			.attr("x", 1000 - 1)
@@ -604,7 +661,7 @@ function ejecutar(){
 			.attr("y2", origen.y+220)
 			.style("stroke","black")
 			.style("stroke-width",2)
-			.style("stroke-dasharray","10,5");        
+			.style("stroke-dasharray","10,5");
 
 		// Agrega etiquetas de texto de la barra de resultados
 		text0=canvas.append("text")
@@ -621,16 +678,16 @@ function ejecutar(){
 			.text("0.45")
 			.attr("x", 1065)
 			.attr("y", origen.y+220);
-	
+
 
 		// Crea las lineas y rectangulos en el punto inical (antes de la transición)
 		rectAttributes = barras
 			.attr("x", function(d){return d.x;})
 			.attr("y", "471.75")
-			.attr("width", function(d){return d.width;})	
+			.attr("width", function(d){return d.width;})
 			.attr("height", function(d){return d.height;})
-			.attr("fill", function(d){return d.fill;});	
-		
+			.attr("fill", function(d){return d.fill;});
+
 		linesAttributes = lineas
 			.attr("x1", function(d){return d.x1;})
 			.attr("y1", "471.75")
@@ -649,7 +706,7 @@ function ejecutar(){
 			.attr("class", "conector")
 			.attr("stroke", "black")
 			.attr("stroke-width", "5");
-		
+
 		resultLbl = canvas.append("text")
 			.attr("x",  1000+18)
 			.attr("y", "471.75")
@@ -657,8 +714,8 @@ function ejecutar(){
 			.attr("font-size", "12px")
 			.attr("fill", "black")
 			.attr("font-weight", "bold")
-			.text(scoreFinalEstandar.toFixed(3));		
-		
+			.text(scoreFinalEstandar.toFixed(3));
+
 
 		// Hace la transición de las barras, líneas y etiqueta
 		tran_time=1500;
@@ -666,8 +723,8 @@ function ejecutar(){
 		rectAttributes = barras
 			.transition()
 			.duration(tran_time)
-			.attr("y", function(d){return d.y;});	
-		
+			.attr("y", function(d){return d.y;});
+
 		linesAttributes = lineas
 			.transition()
 			.duration(tran_time)
@@ -686,7 +743,7 @@ function ejecutar(){
 			.attr("class", "conector")
 			.attr("stroke", "black")
 			.attr("stroke-width", "5");
-			
+
 			resultLblAtt = resultLbl
 			.transition()
 			.duration(tran_time)
@@ -695,6 +752,6 @@ function ejecutar(){
 			.attr("font-size", "12px")
 			.attr("fill", "black")
 			.attr("font-weight", "bold")
-			.text(scoreFinalEstandar.toFixed(3));									
+			.text(scoreFinalEstandar.toFixed(3));
 	}
 }
