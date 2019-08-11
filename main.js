@@ -40,7 +40,7 @@ textTitle = canvas.append("text")
 	.attr("font-weight", "bold")
 	.attr("class", "tooltip")
 	.text("Actividad")
-	.append("Span").attr("class", "tooltiptext")
+	.append("span").attr("class", "tooltiptext")
 		       .text("Parámetro cualitativo que mide que tan activo es el perro (5 es mucho y 1 muy poco)");
 textTitle = canvas.append("text")
 	.attr("x", margen.x + 122)
