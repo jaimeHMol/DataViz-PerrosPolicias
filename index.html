@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html>
-    <head>     
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		
-        <!-- Llamado a bootstrap -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-			integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<!-- <link rel="stylesheet" type="text/css" href="bootstrap.min.css" media="all"/> -->
-		
-        <!-- Llamado a jquery -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<!-- Llamado a bootstrap.js -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
-		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	
-		<!-- Llamado a hoja de estilo de la plantilla dashboard -->
-        <link href="dashboard.css" rel="stylesheet">
+    <head>
+  		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+          <!-- Llamado a bootstrap -->
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  			integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  		<!-- <link rel="stylesheet" type="text/css" href="bootstrap.min.css" media="all"/> -->
+          <!-- Llamado a jquery -->
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  		<!-- Llamado a bootstrap.js -->
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+  		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  		<!-- Llamado a hoja de estilo de la plantilla dashboard -->
+      <link href="dashboard.css" rel="stylesheet">
     </head>
 
     <!-- Cuerpo -->
@@ -44,32 +43,35 @@
 				  </form>
 				</div>
 			  </div>
-		</div>		
+		</div>
 
         <!-- Main     -->
 		<div class="container-fluid">
 			<div class="row">
 
-				
+
 				<h1 class="page-header">Modelo predictivo del resultado del entrenamiento canino</h1>
 
 				<div>
-					<h4>¿Que necesitan para convertirse en servidores públicos?</h4> <br>					
-					Entre los años 2002 y 2015, científicos japoneses han evaluado distintas caracteristicas de perros 
-					jovenes que ingresaron a los programas de entrenamiento de "perros detectores" de las fuerzas de 
-					seguridad. Se analizaron cualidades y atributos generales de 340 perros candidatos y su relación con  
-					la aprobación final del entrenamiento. Las variables involucradas miden aspectos comportamentales, 
+					<h4>¿Que necesitan para convertirse en servidores públicos?</h4> <br>
+					Entre los años 2002 y 2015, científicos japoneses han evaluado distintas caracteristicas de perros
+					jovenes que ingresaron a los programas de entrenamiento de "perros detectores" de las fuerzas de
+					seguridad. Se analizaron cualidades y atributos generales de 340 perros candidatos y su relación con
+					la aprobación final del entrenamiento. Las variables involucradas miden aspectos comportamentales,
 					el sexo y la presencia de genes especificos. <br>
 					¿Cuales son las variables mas importantes? ¿Cuanto impacta cada una de ellas en la predisposicion para terminar exitosamente el programa de entrenamiento?
 				</div>
 
 				<h1 class="page-header"></h1>
-				<!-- Llamado a D3-->
-				<script src="https://d3js.org/d3.v5.min.js"></script>
+
+        <!-- Llamado a D3 (Con esta funcionaba)-->
+        <!-- <script src="https://d3js.org/d3.v5.min.js"></script> -->
+
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="tooltip.js"></script>
 
 				<!-- Llamado al js (java script) -->
 				<script src="main.js"></script>
-				<!-- <script src="barras locas.js"></script> -->
 
 				<div class="hideshow" id="btnDiv" style="margin-left:1010px; margin-top:68px;">
 					 <button type="button" class="btn btn-primary btn-lg" id="runModel" data-scroll="#mainCanvas">
@@ -79,11 +81,11 @@
 
 			</div>
 		</div>
-	
+
 		<!-- Footer     -->
 		<div class="container-fluid">
 			<div class="row">
-				<br><br><br>Fuente: Konno et al. (2018) Effect of canine oxytocin receptor gene polymorphism on the successful training of drug detection dogs.</p>	
+				<br><br><br>Fuente: Konno et al. (2018) Effect of canine oxytocin receptor gene polymorphism on the successful training of drug detection dogs.</p>
 			</div>
 
     </body>
