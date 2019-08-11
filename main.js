@@ -333,6 +333,8 @@ for (j=1; j<3; j++) {
 $(document).ready(function(){
 		$('#runModel').click(function(){
 			primeraEjecucion = 1;
+			var scrollToId = $(this).data("data-scroll");
+                        var scrollToElement = document.getElementById(scrollToId);
 			ejecutar();	
 	});
 });
