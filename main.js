@@ -6,6 +6,7 @@ var canvas = d3.select("body").select(".row")
 				.append("svg")
 				.attr("width", 1100)
 				.attr("height", 640)
+				.attr("id", "mainCanvas")
 				.style("float", "left");
 
 // Defino gradiente graduado en color para barra.
