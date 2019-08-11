@@ -333,8 +333,16 @@ for (j=1; j<3; j++) {
 $(document).ready(function(){
 		$('#runModel').click(function(){
 			primeraEjecucion = 1;
+			
+			// Scroll al Canvas para que aparezca completo en la página
 			var scrollToId = $(this).data("data-scroll");
                         var scrollToElement = document.getElementById(scrollToId);
+			if($("#mainCanvas").length > 0){
+        			$('html, body').animate({ scrollTop: $("#mainCanvas").offset().top}, 1000);
+			}
+			
+			
+			
 			ejecutar();	
 	});
 });
