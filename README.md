@@ -1,4 +1,4 @@
-# Visualización de datos: Perros Policias V1.
+# Visualización de datos: Perros Policias V1
 Repositorio que contiene el codigo fuente HTML, CSS y JS de la versión final del proyecto "Perros Policias" desarrollado para la materia de Visualización de Datos de la Maestría en Data Mining de la UBA.
      
   Basado en el artículo _Effect of canine oxytocin receptor gene polymorphism on the successful training of drug detection dogs_ por Akitsugu Konno, Miho Inoue-Murayama, Shinji Yabuta, Akiko Tonoike, Miho Nagasawa, Kazutaka Mogi y Takefumi Kikusui.
