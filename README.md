@@ -6,5 +6,5 @@ Repositorio que contiene el código fuente HTML, CSS y JS de la versión final d
      
   Puedes ver el sitio web en [este link.](https://jaimehmol.github.io/DataViz-PerrosPolicias1.0/)
   
-Buenos Aires - Argentina
+Buenos Aires - Argentina   
 Mayo 2018.
